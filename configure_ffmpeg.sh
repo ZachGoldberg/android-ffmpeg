@@ -42,16 +42,22 @@ $DEBUG_FLAG \
 \
 --disable-doc \
 --enable-yasm \
+  --enable-nonfree --enable-version3 \
+  --enable-libmp3lame --enable-libx264 \
+  --enable-gpl --enable-pthreads --enable-gray --enable-runtime-cpudetect \
+  \
+  --disable-ffplay --disable-doc \
+  \
+  --disable-devices \
+  --disable-bsfs      --enable-bsf=h264_mp4toannexb \
+  --disable-filters   --enable-filter=scale,aresample \
+  --disable-parsers   --enable-parser=h264,aac,aac_latm \
+  --disable-protocols --enable-protocol=file,pipe,concat \
+  --disable-encoders  --enable-encoder=libmp3lame,libx264,wav,pcm_s16le,pcm_s32le \
+  --disable-decoders  --enable-decoder=aac,flv,h264,mp3,mpeg4,wav,vc1,vorbis,vp8,pcm_s16le,pcm_s32le \
+  --disable-demuxers  --enable-demuxer=flv,matroska,mov,mp3,mp4,wav,sox,h264,mpegts,pcm_s16le \
+  --disable-muxers    --enable-muxer=flv,matroska,mov,mp3,mp4,ismv,tgp,tg2,wav,webm,sox,h264,mpegts,null,pcm_s16le \
 \
---enable-decoders \
---enable-encoders \
---enable-muxers \
---enable-demuxers \
---enable-parsers \
---enable-protocols \
---enable-filters \
---enable-avresample \
---enable-libfreetype \
 \
 --disable-indevs \
 --enable-indev=lavfi \
@@ -60,8 +66,6 @@ $DEBUG_FLAG \
 --enable-hwaccels \
 \
 --enable-ffmpeg \
---disable-ffplay \
---disable-ffprobe \
 --disable-ffserver \
 --disable-network \
 \
